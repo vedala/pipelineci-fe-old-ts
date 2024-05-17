@@ -10,6 +10,7 @@ import Dashboard from './components/Dashboard';
 import PageNotFound from './components/PageNotFound';
 import LoginButton from './components/login';
 import LogoutButton from './components/logout';
+import Protected from './Protected';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -21,11 +22,18 @@ function App() {
           ? <LoginButton />
           : <LogoutButton />
         }
-      </div>
       <Routes>
-        <Route path="/" element={<Dashboard />}/>
+        <Route
+          path="/"
+          element={
+            <Protected isAuthenticated={isAuthenticated}>
+              <Dashboard />
+            </Protected>
+          }
+        />
         <Route path="*" element={<PageNotFound />}/>
       </Routes>
+      </div>
     </Router>
   );
 }
