@@ -9,8 +9,6 @@ import './App.css';
 import Home from './components/Home';
 import Landing from './components/Landing';
 import PageNotFound from './components/PageNotFound';
-import LoginButton from './components/login';
-import LogoutButton from './components/logout';
 import { AuthenticationGuard } from './components/authentication-guard';
 
 function App() {
@@ -19,12 +17,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        { !isAuthenticated
-          ? <LoginButton />
-          : <LogoutButton />
-        }
         <Routes>
-          <Route path="/" element={<Landing />} />
+          <Route path="/" element={<Landing isAuthenticated={isAuthenticated} />} />
           <Route
             path="/home"
             element={<AuthenticationGuard component={Home} />}
