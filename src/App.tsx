@@ -10,7 +10,6 @@ import Dashboard from './components/Dashboard';
 import PageNotFound from './components/PageNotFound';
 import LoginButton from './components/login';
 import LogoutButton from './components/logout';
-// import Protected from './Protected';
 import { AuthenticationGuard } from './components/authentication-guard';
 
 function App() {
