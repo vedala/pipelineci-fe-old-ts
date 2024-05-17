@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Dashboard() {
+function Landing() {
   return (
     <div className="dashboard">
-      <h1>PipelineCI Dashboard</h1>
+      <h1>Welcome to PipelineCI</h1>
     </div>
   );
 }
 
-export default Dashboard;
+export default Landing;
