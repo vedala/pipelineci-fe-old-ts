@@ -12,7 +12,7 @@ const Landing = ({ isAuthenticated }) => {
         : <LogoutButton />
       }
       <h1>Welcome to PipelineCI</h1>
-      <Link to="/home">Go To App</Link>
+      { isAuthenticated && <Link to="/home">Go To App</Link> }
     </div>
   );
 }
