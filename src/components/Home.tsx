@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LogoutButton from './logout';
 
-function Dashboard() {
+function Home() {
   return (
-    <div className="dashboard">
+    <div className="home">
       <LogoutButton />
-      <h1>PipelineCI Home page</h1>
+      <h1>Organizations</h1>
+      <Link to="/create-organization">Create Organization</Link>
     </div>
   );
 }
 
-export default Dashboard;
+export default Home;
